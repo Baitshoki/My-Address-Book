@@ -1,0 +1,20 @@
+<p>
+    contact-details-list >>
+</p>
+<table class="table table-hoover">
+    <tr *ngFor="let cd of service.list">
+        <td  (click)="populateForm(cd)" {{cd.FirstName}}></td>
+        <td  (click)="populateForm(cd)" {{cd.Surname}}></td>
+        <td  (click)="populateForm(cd)" {{cd.Telephone}}></td>
+        <td  (click)="populateForm(cd)" {{cd.CellNumber}}></td>
+        <td  (click)="populateForm(cd)" {{cd.EmailAddress}}></td>  
+        <td  (click)="populateForm(cd)" {{cd.UpdatedDate}}></td>   
+        <td>
+            <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(cd.ID)"></i>
+        </td>      
+    </tr>
+</table>
+
+
+      
+

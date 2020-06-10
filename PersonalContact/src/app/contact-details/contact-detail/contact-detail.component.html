@@ -1,0 +1,83 @@
+<p>
+    contact-details >
+</p>
+<form #form="ngForm" autocomplete="off" (submit="onSubmit(form)")>
+    <input type="hidden" name="ID" [value]= "service.formData.ID">
+    <input type="hidden" name="Surname" [value]= "service.formData.Surname">
+    <input type="hidden" name="FirstName" [value]= "service.formData.FirstName">
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-user-circle"   [class.green-icon]="FirstName.valid"  [class.red-icon]="FirstName.invalid && FirstName.touched"></i>
+                </div>
+            </div>
+            <input name="FirstName" #FirstName="ngModel" [(ngModel)] ="service.formData.FirstName" class="form-control" placeholder="First Name"  required maxlength="25" minlength="3">
+         
+            <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="form.invalid"><i class="fas fa-search"></i>Search</button>
+  
+        
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-user-circle" [class.green-icon]="Surname.valid"  [class.red-icon]="Surname.invalid && Surname.touched"></i>
+                </div>
+            </div>
+            <input name="Surname" #Surname="ngModel" [(ngModel)] ="service.formData.Surname" class="form-control" placeholder="Surname" required   required maxlength="25" minlength="3">
+         </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-user-circle"  [class.green-icon]="Telephone.valid"  [class.red-icon]="Telephone.invalid && Telephone.touched"></i>
+                </div>
+            </div>
+            <input name="Telephone" #Telephone="ngModel" [(ngModel)] ="service.formData.Telephone" class="form-control" placeholder="Telephone"  required   required maxlength="10" minlength="10">
+         </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-user-circle"   [class.green-icon]="CellNumber.valid"  [class.red-icon]="CellNumber.invalid && CellNumber.touched"></i>
+                </div>
+            </div>
+            <input name="CellNumber" #CellNumber="ngModel" [(ngModel)] ="service.formData.CellNumber" class="form-control" placeholder="Cell Number"     required maxlength="10" minlength="10">
+         </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-user-circle"   [class.green-icon]="EmailAddress.valid"  [class.red-icon]="EmailAddress.invalid && EmailAddress.touched"></i>
+                </div>
+            </div>
+            <input name="EmailAddress" #EmailAddress="ngModel" [(ngModel)] ="service.formData.EmailAddress" class="form-control" placeholder="Email Address"  required   required maxlength="25" minlength="10">
+         </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-calendar-alt"  [class.green-icon]="UpdatedDate.valid"  [class.red-icon]="UpdatedDate.invalid && UpdatedDate.touched"></i>
+                </div>
+            </div>
+            <input name="UpdatedDate" #UpdatedDate="ngModel" [(ngModel)] ="service.formData.UpdatedDate" class="form-control" placeholder="DD/MM/YY"  required   required maxlength="8" minlength="8">
+         </div>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="form.invalid"><i class="fas fa-database"></i>Submit</button>
+    </div>
+
+</form>
